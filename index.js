@@ -19,6 +19,9 @@ module.exports = function (arr) {
 		} else if (obj.os === platform && !obj.arch) {
 			delete obj.os;
 			return obj;
+		} else if (obj.arch === arch && !obj.os) {
+			delete obj.arch;
+			return obj;
 		} else if (!obj.os && !obj.arch) {
 			return obj;
 		}
