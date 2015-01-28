@@ -1,12 +1,5 @@
 'use strict';
 
-/**
- * Filter an array of objects to a specific OS
- *
- * @param {Array} arr
- * @api public
- */
-
 module.exports = function (arr) {
 	var arch = process.arch === 'x64' ? 'x64' : process.arch === 'arm' ? 'arm' : 'x86';
 	var platform = process.platform;
