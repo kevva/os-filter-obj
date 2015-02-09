@@ -1,6 +1,6 @@
 {
   "name": "os-filter-obj",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Filter an array of objects to a specific OS",
   "license": "MIT",
   "repository": "kevva/os-filter-obj",
