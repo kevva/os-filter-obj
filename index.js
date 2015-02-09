@@ -4,6 +4,10 @@ module.exports = function (arr) {
 	var arch = process.arch === 'x64' ? 'x64' : process.arch === 'arm' ? 'arm' : 'x86';
 	var platform = process.platform;
 
+	if (!arr.length) {
+		return null;
+	}
+
 	return arr.filter(function (obj) {
 		if (obj.os === platform && obj.arch === arch) {
 			delete obj.os;
