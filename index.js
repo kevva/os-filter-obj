@@ -4,8 +4,6 @@ module.exports = function (arr) {
 	var arch = process.arch === 'x64' ? 'x64' : process.arch === 'arm' ? 'arm' : 'x86';
 	var platform = process.platform;
 
-	console.log(arr);
-
 	if (!arr || !arr.length) {
 		return [];
 	}
