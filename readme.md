@@ -28,7 +28,7 @@ var arr = [{
 }];
 
 osFilterObj(arr);
-//=> [{ foo: 'linux-x64' }];
+//=> [{foo: 'linux-x64'}];
 ```
 
 ## License
