@@ -2,11 +2,13 @@
 
 > Filter an array of objects to a specific OS
 
+
 ## Install
 
-```sh
+```
 $ npm install --save os-filter-obj
 ```
+
 
 ## Usage
 
@@ -30,6 +32,7 @@ var arr = [{
 osFilterObj(arr);
 //=> [{foo: 'linux-x64'}];
 ```
+
 
 ## License
 
