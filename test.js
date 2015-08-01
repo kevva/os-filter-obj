@@ -1,5 +1,4 @@
 'use strict';
-
 var test = require('ava');
 var osFilterObj = require('./');
 
@@ -8,11 +7,11 @@ test('filter an array of objects to a specific os', function (t) {
 		foo: 'all'
 	}, {
 		foo: 'linux',
-		os: 'linux',
+		os: 'linux'
 	}, {
 		foo: 'darwin',
 		os: 'darwin'
-	},{
+	}, {
 		foo: 'win32',
 		os: 'win32'
 	}];

@@ -1,8 +1,15 @@
 'use strict';
-
 module.exports = function (arr) {
-	var arch = process.arch === 'x64' ? 'x64' : process.arch === 'arm' ? 'arm' : 'x86';
+	var arch;
 	var platform = process.platform;
+
+	if (process.arch === 'x64') {
+		arch = 'x64';
+	} else if (process.arch === 'arm') {
+		arch = 'arm';
+	} else {
+		arch = 'x86';
+	}
 
 	if (!arr || !arr.length) {
 		return [];
