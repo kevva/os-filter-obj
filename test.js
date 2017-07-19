@@ -2,7 +2,7 @@ import test from 'ava';
 import osFilterObj from './';
 
 test('filter an array of objects to a specific os', t => {
-	var arr = [{
+	const arr = [{
 		foo: 'all'
 	}, {
 		foo: 'linux',
@@ -25,7 +25,7 @@ test('filter an array of objects to a specific os', t => {
 });
 
 test('filter an array of objects to a specific os without alter the objects', t => {
-	var arr = [{
+	const arr = [{
 		foo: 'all'
 	}, {
 		foo: 'linux',
