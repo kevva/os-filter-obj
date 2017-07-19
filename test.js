@@ -14,6 +14,9 @@ test('filter an array of objects to a specific os', function (t) {
 	}, {
 		foo: 'win32',
 		os: 'win32'
+	}, {
+		foo: 'arm',
+		os: 'arm'
 	}];
 
 	t.assert(osFilterObj(arr).length === 2, osFilterObj(arr).length);
