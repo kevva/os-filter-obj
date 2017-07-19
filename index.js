@@ -1,19 +1,14 @@
 'use strict';
+var arch;
+var platform;
+
 module.exports = function (arr) {
-	var arch;
-	var platform = process.platform;
-
-	if (process.arch === 'x64') {
-		arch = 'x64';
-	} else if (process.arch === 'arm') {
-		arch = 'arm';
-	} else {
-		arch = 'x86';
-	}
-
 	if (!arr || !arr.length) {
 		return [];
 	}
+
+	platform = platform || process.platform;
+	arch = arch || require('arch')();
 
 	return arr.filter(function (obj) {
 		if (obj.os === platform && obj.arch === arch) {
