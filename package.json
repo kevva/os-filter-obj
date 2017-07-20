@@ -27,7 +27,7 @@
   ],
   "devDependencies": {
     "ava": "*",
-    "xo": "^0.18.2"
+    "xo": "*"
   },
   "dependencies": {
     "arch": "^2.1.0"
