@@ -1,5 +1,5 @@
 import test from 'ava';
-import osFilterObj from './';
+import osFilterObj from '.';
 
 test('filter an array of objects to a specific os', t => {
 	const arr = [{
