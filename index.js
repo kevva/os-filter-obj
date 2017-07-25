@@ -1,33 +1,38 @@
 'use strict';
-module.exports = function (arr) {
-	var arch;
-	var platform = process.platform;
+let arch;
+let platform;
 
-	if (process.arch === 'x64') {
-		arch = 'x64';
-	} else if (process.arch === 'arm') {
-		arch = 'arm';
-	} else {
-		arch = 'x86';
-	}
-
-	if (!arr || !arr.length) {
+module.exports = function (arr, opts) {
+	if (!arr || arr.length === 0) {
 		return [];
 	}
 
-	return arr.filter(function (obj) {
+	platform = platform || process.platform;
+	arch = arch || require('arch')();
+
+	if (opts && opts.keep) {
+		return arr.filter(obj => {
+			if ((obj.os === platform || !obj.os) && (obj.arch === arch || !obj.arch)) {
+				return true;
+			}
+			return false;
+		});
+	}
+
+	return arr.filter(obj => {
 		if (obj.os === platform && obj.arch === arch) {
 			delete obj.os;
 			delete obj.arch;
-			return obj;
+			return true;
 		} else if (obj.os === platform && !obj.arch) {
 			delete obj.os;
-			return obj;
+			return true;
 		} else if (obj.arch === arch && !obj.os) {
 			delete obj.arch;
-			return obj;
+			return true;
 		} else if (!obj.os && !obj.arch) {
-			return obj;
+			return true;
 		}
+		return false;
 	});
 };

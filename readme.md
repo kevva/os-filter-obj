@@ -33,6 +33,28 @@ osFilterObj(arr);
 //=> [{foo: 'linux-x64'}];
 ```
 
+## API
+
+### osFilterObj(arr, [opts])
+
+Filter an array of objects to a specific OS.
+
+#### arr
+
+Type: `Array`
+
+The array to filter
+
+#### options
+
+Type: `Object`<br>
+
+##### keep
+
+Type: `boolean`<br>
+Default: `false`
+
+If false, matching `os` and `arch` keys are deleted from the object.
 
 ## License
 
