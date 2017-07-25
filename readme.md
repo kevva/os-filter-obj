@@ -1,4 +1,4 @@
-# os-filter-obj [![Build Status](http://img.shields.io/travis/kevva/os-filter-obj.svg?style=flat)](https://travis-ci.org/kevva/os-filter-obj)
+# os-filter-obj [![Build Status](https://travis-ci.org/kevva/os-filter-obj.svg?branch=master)](https://travis-ci.org/kevva/os-filter-obj)
 
 > Filter an array of objects to a specific OS
 
@@ -6,55 +6,56 @@
 ## Install
 
 ```
-$ npm install --save os-filter-obj
+$ npm install os-filter-obj
 ```
 
 
 ## Usage
 
 ```js
-var osFilterObj = require('os-filter-obj');
+const osFilterObj = require('os-filter-obj');
 
-var arr = [{
-	foo: 'linux-x64',
+const objects = [{
 	os: 'linux',
-	arch: 'x64'
+	arch: 'x64',
+	foo: 'unicorn',
+	bar: 'cow'
 }, {
-	foo: 'darwin-x64',
 	os: 'darwin',
-	arch: 'x64'
+	arch: 'x64',
+	foo: 'unicorn',
+	bar: 'cow'
 },{
-	foo: 'win32-x64',
 	os: 'win32',
-	arch: 'x64'
+	arch: 'x64',
+	foo: 'unicorn',
+	bar: 'cow'
 }];
 
-osFilterObj(arr);
-//=> [{foo: 'linux-x64'}];
+osFilterObj(objects);
+/*
+	[{
+		os: 'linux',
+		arch: 'x64',
+		foo: 'unicorn',
+		bar: 'cow'
+	}];
+*/
 ```
+
 
 ## API
 
-### osFilterObj(arr, [opts])
+### osFilterObj(objects)
 
-Filter an array of objects to a specific OS.
+Returns an `Array` with the filtered objects.
 
-#### arr
+#### objects
 
 Type: `Array`
 
-The array to filter
+The `Array` to filter.
 
-#### options
-
-Type: `Object`<br>
-
-##### keep
-
-Type: `boolean`<br>
-Default: `false`
-
-If false, matching `os` and `arch` keys are deleted from the object.
 
 ## License
 
